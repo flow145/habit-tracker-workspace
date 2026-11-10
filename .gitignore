@@ -1,0 +1,11 @@
+# Repos
+/web-app
+/backend
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+docs/.obsidian
+docs/TODO.md
