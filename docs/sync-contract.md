@@ -5,7 +5,7 @@ This document defines observable behavior shared by the web app and backend. The
 ## Account access
 
 - Habit tracking works without an account, including while offline.
-- Users sign up and sign in with a one-time password sent to their email address. A valid code for an unknown email creates a User.
+- Users sign up and sign in with an OTP sent to their email address. A valid code for an unknown email creates a User.
 - Signing out ends remote synchronization and leaves local habit data intact.
 - Deleting a User removes that identity and its remote habit data while leaving local data on the user's devices untouched.
 

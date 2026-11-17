@@ -37,3 +37,6 @@ A sign-in identity associated with a User. An Account is distinct from the User 
 
 **Session**:
 An authenticated period of access for a User.
+
+**OTP**:
+A single-use code emailed to a person to sign up or sign in. A valid OTP for an unknown email creates a User. User-facing copy calls it a code.
