@@ -12,8 +12,8 @@ This document defines observable behavior shared by the web app and backend. The
 ## Authentication state on a device
 
 - The app remembers the signed-in User's email on the device. A remembered User is shown as signed in immediately, including while the server is unreachable.
-- Without a remembered User, the app checks with the server before showing the authentication state. While checking, it shows a loading state. If the server is unreachable, it says so and offers a retry that shows progress while it runs.
-- After that first answer, the app switches between signed in and signed out only when the server confirms whether a Session exists. A recheck that is in progress or fails keeps the current view, so an unfinished sign-in is not reset.
+- Without a remembered User, the app shows the sign-in form immediately and checks with the server in the background.
+- The app switches between signed in and signed out only when the server confirms whether a Session exists. A check that is in progress or fails keeps the current view. If the server confirms a Session without a remembered User, for example one created before the device remembered Users, the signed-in view replaces the sign-in form.
 - When a Session ends elsewhere, for example by expiry, revocation, or User deletion, the app forgets the remembered User and shows the sign-in form without a separate notice.
 - Signing in or out shows its action as in progress until the resulting authentication state is shown.
 
