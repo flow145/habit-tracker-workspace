@@ -1,6 +1,6 @@
 # Business Rules
 
-Domain terms are defined in the workspace [glossary](../../GLOSSARY.md).
+Domain terms are defined in the workspace [glossary](glossary.md).
 
 ## Habits
 

@@ -1,6 +1,6 @@
 # Account and synchronization contract
 
-This document defines observable behavior shared by the web app and backend. Their implementation details belong in each repository's architecture docs.
+This document defines observable behavior shared by the web app and backend. Their implementation details belong in [web app architecture](../web-app/architecture.md) and [backend architecture](../backend/architecture.md).
 
 ## Account access
 

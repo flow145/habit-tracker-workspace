@@ -1,6 +1,5 @@
 # Repos
-/web-app
-/backend
+/repos
 
 # Environment variables
 .env

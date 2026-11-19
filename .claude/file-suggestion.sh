@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # @-autocomplete for the habit-tracker metarepo.
-# Lists files from the outer repo and each nested repo (web-app/, backend/),
+# Lists files from the outer repo and the app repos (repos/web-app, repos/backend),
 # each filtered by its own .gitignore, then fuzzy-ranks them against the query.
 # Input (stdin): {"query": "..."}   Output: newline-separated paths (max 15 shown).
 
@@ -14,7 +14,7 @@ list_repo() { # $1 = repo dir, $2 = path prefix
 
 {
   list_repo . ""
-  for repo in web-app backend; do
+  for repo in repos/web-app repos/backend; do
     [ -d "$repo/.git" ] || [ -f "$repo/.git" ] && list_repo "$repo" "$repo/"
   done
 } | awk '!seen[$0]++' | fzf --filter="$query" | head -15
