@@ -8,6 +8,7 @@ This document defines observable behavior shared by the web app and backend. The
 - Users sign up and sign in with an OTP sent to their email address. A valid code for an unknown email creates a User.
 - Signing out ends remote synchronization and leaves local habit data intact.
 - Deleting a User removes that identity and its remote habit data while leaving local data on the user's devices untouched.
+- Deleting a User requires a recent sign-in; otherwise the app emails an OTP to confirm the deletion.
 
 ## Authentication state on a device
 
@@ -15,7 +16,7 @@ This document defines observable behavior shared by the web app and backend. The
 - Without a remembered User, the app shows the sign-in form immediately and checks with the server in the background.
 - The app switches between signed in and signed out only when the server confirms whether a Session exists. A check that is in progress or fails keeps the current view. If the server confirms a Session without a remembered User, for example one created before the device remembered Users, the signed-in view replaces the sign-in form.
 - When a Session ends elsewhere, for example by expiry, revocation, or User deletion, the app forgets the remembered User and shows the sign-in form without a separate notice.
-- Signing in or out shows its action as in progress until the resulting authentication state is shown.
+- Signing in, signing out, or deleting the User shows the action as in progress until the resulting authentication state is shown.
 
 ## Data ownership
 

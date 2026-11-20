@@ -29,6 +29,7 @@ The backend provides:
 - Better Auth provides email OTP sign-in and sessions. A valid OTP for an unknown email creates a User.
 - Development logs OTPs. Staging uses Resend's shared test sender, which is limited to verified test recipients until a sending domain is configured. Production uses Resend with `RESEND_FROM_EMAIL` on a verified domain.
 - Configure `BETTER_AUTH_SECRET` and `BETTER_AUTH_URL` in every runtime stage; use HTTPS for staging and production. Staging and production require `RESEND_API_KEY`; production also requires `RESEND_FROM_EMAIL`.
+- Better Auth deletes a User only from a fresh Session (`freshAge`, default 1 day). The `email-verification` OTP type is reserved for confirming User deletion: its email asks to confirm the deletion, and `emailVerification.autoSignInAfterVerification` makes verifying it create the fresh Session.
 - Alpha 1 deletion removes Better Auth records. When Alpha 2 adds remote habit data, User deletion must remove it too.
 
 ## Data ownership and storage

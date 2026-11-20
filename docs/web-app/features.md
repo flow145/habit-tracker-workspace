@@ -23,5 +23,5 @@
 
 ## Alpha 3
 
-- [ ] auth
+- [x] auth
 - [ ] sync
